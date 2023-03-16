@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.41/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock</title>
   </head>
   <body>
@@ -17,26 +19,26 @@
         <option value="Lagos">Lagos, Nigeria</option>
         <option value="Taipei">Taipei, Taiwan</option>
       </select>
-      <div class="cities">
+      <div class="cities" id="san-juan">
         <div>
-          <h2>San Francisco, USA</h2>
+          <h2>San Juan, Argentina</h2>
           <div class="date">March 11th, 2023</div>
         </div>
         <div class="time">12:30:15 <small>PM</small></div>
       </div>
-      <div class="cities">
+      <div class="cities" id="manila">
         <div>
           <h2>Manila, Philippines</h2>
-          <div class="date">March 11th, 2023</div>
+          <div id="date" class="date">March 11th, 2023</div>
         </div>
-        <div class="time">12:30:15 <small>PM</small></div>
+        <div id="time" class="time">12:30:15 <small>PM</small></div>
       </div>
-      <div class="cities">
+      <div class="cities" id="montreal">
         <div>
           <h2>Montreal, Canada</h2>
-          <div class="date">March 11th, 2023</div>
+          <div id="date" class="date">March 11th, 2023</div>
         </div>
-        <div class="time">12:30:15 <small>PM</small></div>
+        <div id="time" class="time">12:30:15 <small>PM</small></div>
       </div>
       <br />
       <br />
@@ -47,6 +49,6 @@
         GitHub.com.</a
       >
     </footer>
-    <script src="javascript/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
