@@ -41,8 +41,12 @@ function updateCity(event) {
           <div class="time">${cityTime.format(
             "hh:mm:ss"
           )}<small>${cityTime.format(" A")}</small></div>
-        </div>
+                 </div>
+              <a href="https://serene-liger-8d0772.netlify.app/"> Back to Home page </a>
+       
   `;
 }
+updateTime();
+setInterval(updateTime, 1000);
 let citiesSelect = document.querySelector("#cityselect");
 citiesSelect.addEventListener("change", updateCity);
