@@ -42,7 +42,8 @@ function updateCity(event) {
             "hh:mm:ss"
           )}<small>${cityTime.format(" A")}</small></div>
                  </div>
-              <a href="https://serene-liger-8d0772.netlify.app/"> Back to Home page </a>
+                 <footer>
+              <a href="https://serene-liger-8d0772.netlify.app/"> Back to Home page </a></footer>
        
   `;
 }
