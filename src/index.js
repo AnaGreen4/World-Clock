@@ -23,31 +23,35 @@ function displayTime() {
   );
 }
 displayTime();
-setInterval(displayTime, 1000);
+let interval = setInterval(displayTime, 1000);
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(cityTimeZone);
+  clearInterval(interval);
+
+  updateTime(cityTimeZone);
+  interval = setInterval(() => updateTime(cityTimeZone), 1000);
+}
+
+function updateTime(timezone) {
+  let cityName = timezone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(timezone);
   let citiesElement = document.querySelector("#allcities");
   citiesElement.innerHTML = ` <div class="cities">
           <div>
             <h2>${cityName}</h2>
             <div class="date">${cityTime.format("MMMM Do, YYYY")}</div>
-          </div>
+           </div>
           <div class="time">${cityTime.format(
             "hh:mm:ss"
           )}<small>${cityTime.format(" A")}</small></div>
                  </div>
                  <footer>
               <a href="https://serene-liger-8d0772.netlify.app/"> Back to Home page </a></footer>
-       
   `;
 }
-updateTime();
-setInterval(updateTime, 1000);
 let citiesSelect = document.querySelector("#cityselect");
 citiesSelect.addEventListener("change", updateCity);
